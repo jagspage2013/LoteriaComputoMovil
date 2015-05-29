@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Loteria</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="card_names">
+        <item>Rana</item>
+        <item>Gallo</item>
+        <item>El Diablo</item>
+        <item>La Dama</item>
+        <item>El Catrin</item>
+        <item>El Paraguas</item>
+        <item>La Sirena</item>
+        <item>La Escalera</item>
+        <item>La Botella</item>
+        <item>El Barril</item>
+        <item>El Arbol</item>
+        <item>El Melon</item>
+        <item>El Valiente</item>
+        <item>El Gorrito</item>
+        <item>La Muerte</item>
+        <item>La Pera</item>
+        <item>La Bandera</item>
+        <item>El Balndolon</item>
+        <item>El Violoncello</item>
+        <item>La Garza</item>
+        <item>El Pajaro</item>
+        <item>La Mano</item>
+        <item>La Bota</item>
+        <item>La Luna</item>
+        <item>El Cotorro</item>
+        <item>El Borracho</item>
+        <item>El Negrito</item>
+        <item>El Corazón</item>
+        <item>La Sandía</item>
+        <item>El Tambor</item>
+        <item>El Camarón</item>
+        <item>Las Jaras</item>
+        <item>El Músico</item>
+        <item>La Araña</item>
+        <item>El Soldado</item>
+        <item>La Estrella</item>
+        <item>El Caso</item>
+        <item>El Mundo</item>
+        <item>El Apache</item>
+        <item>El Nopal</item>
+        <item>El Alacrán</item>
+        <item>La Rosa</item>
+        <item>La Calavera</item>
+        <item>La Campana</item>
+        <item>El Cantarito</item>
+        <item>El Venado</item>
+        <item>El Sol</item>
+        <item>La Corona</item>
+        <item>La Chalupa</item>
+        <item>El Pino</item>
+        <item>El Pescado</item>
+        <item>La Palma</item>
+        <item>La Maceta</item>
+        <item>El Arpa</item>
+
+    </string-array>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

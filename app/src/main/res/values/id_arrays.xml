@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <array name="card_ids">
+        <item>@id/card_1</item>
+        <item>@id/card_2</item>
+        <item>@id/card_3</item>
+        <item>@id/card_4</item>
+        <item>@id/card_5</item>
+        <item>@id/card_6</item>
+        <item>@id/card_7</item>
+        <item>@id/card_8</item>
+        <item>@id/card_9</item>
+        <item>@id/card_10</item>
+        <item>@id/card_11</item>
+        <item>@id/card_12</item>
+        <item>@id/card_13</item>
+        <item>@id/card_14</item>
+        <item>@id/card_15</item>
+        <item>@id/card_16</item>
+        <item>@id/card_17</item>
+        <item>@id/card_18</item>
+        <item>@id/card_19</item>
+        <item>@id/card_20</item>
+        <item>@id/card_21</item>
+        <item>@id/card_22</item>
+        <item>@id/card_23</item>
+        <item>@id/card_24</item>
+        <item>@id/card_25</item>
+    </array>
+    <array name="frijol_ids">
+        <item>@id/frijol_1</item>
+        <item>@id/frijol_2</item>
+        <item>@id/frijol_3</item>
+        <item>@id/frijol_4</item>
+        <item>@id/frijol_5</item>
+        <item>@id/frijol_6</item>
+        <item>@id/frijol_7</item>
+        <item>@id/frijol_8</item>
+        <item>@id/frijol_9</item>
+        <item>@id/frijol_10</item>
+        <item>@id/frijol_11</item>
+        <item>@id/frijol_12</item>
+        <item>@id/frijol_13</item>
+        <item>@id/frijol_14</item>
+        <item>@id/frijol_15</item>
+        <item>@id/frijol_16</item>
+        <item>@id/frijol_17</item>
+        <item>@id/frijol_18</item>
+        <item>@id/frijol_19</item>
+        <item>@id/frijol_20</item>
+        <item>@id/frijol_21</item>
+        <item>@id/frijol_22</item>
+        <item>@id/frijol_23</item>
+        <item>@id/frijol_24</item>
+        <item>@id/frijol_25</item>
+
+    </array>
+</resources>
