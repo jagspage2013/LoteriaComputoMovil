@@ -3,6 +3,7 @@ package unam.fi.computomovil.loteria.util;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by José Ángel García Salinas on 29/05/15.
@@ -22,23 +23,24 @@ public class WinnerVerifier {
         Integer[] cinco=new Integer[]{4,8,12,16,20};
         switch (tamTablero){
             case 3:
-                if (selectedCards.contains(tres)){
-                    return true;
-                }else{
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(tres)))){
+
+                return true;
+            }else{
+                return false;
+            }
             case 4:
-                if (selectedCards.contains(cuatro)){
-                    return true;
-                }else{
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatro)))){
+                return true;
+            }else{
+                return false;
+            }
             case 5:
-                if (selectedCards.contains(cinco)){
-                    return true;
-                }else{
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cinco)))){
+                return true;
+            }else{
+                return false;
+            }
             default:
                 Log.d("ERROR","Tabero no definido");
                 return false;
@@ -59,23 +61,23 @@ public class WinnerVerifier {
         Integer[] cinco = new Integer[]{0, 6, 12, 18, 24};
         switch (tamTablero) {
             case 3:
-                if (selectedCards.contains(tres)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(tres))) ){
+                return true;
+            } else {
+                return false;
+            }
             case 4:
-                if (selectedCards.contains(cuatro)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatro)))) {
+                return true;
+            } else {
+                return false;
+            }
             case 5:
-                if (selectedCards.contains(cinco)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cinco)))) {
+                return true;
+            } else {
+                return false;
+            }
             default:
                 Log.d("ERROR", "Tabero no definido");
                 return false;
@@ -96,23 +98,23 @@ public class WinnerVerifier {
         Integer[] cinco = new Integer[]{0,4,6,8,12,16,18,20,24};
         switch (tamTablero) {
             case 3:
-                if (selectedCards.contains(tres)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(tres)))) {
+                return true;
+            } else {
+                return false;
+            }
             case 4:
-                if (selectedCards.contains(cuatro)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatro)))) {
+                return true;
+            } else {
+                return false;
+            }
             case 5:
-                if (selectedCards.contains(cinco)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cinco))) ){
+                return true;
+            } else {
+                return false;
+            }
             default:
                 Log.d("ERROR", "Tabero no definido");
                 return false;
@@ -133,23 +135,23 @@ public class WinnerVerifier {
         Integer[] cinco = new Integer[]{0,4,20,24};
         switch (tamTablero) {
             case 3:
-                if (selectedCards.contains(tres)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(tres)))) {
+                return true;
+            } else {
+                return false;
+            }
             case 4:
-                if (selectedCards.contains(cuatro)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatro)))) {
+                return true;
+            } else {
+                return false;
+            }
             case 5:
-                if (selectedCards.contains(cinco)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cinco)))) {
+                return true;
+            } else {
+                return false;
+            }
             default:
                 Log.d("ERROR", "Tabero no definido");
                 return false;
@@ -179,25 +181,25 @@ public class WinnerVerifier {
         Integer[] cincoE = new Integer[]{20,21,22,23,24};
         switch (tamTablero) {
             case 3:
-                if (selectedCards.contains(tresA)||selectedCards.contains(tresB)||selectedCards.contains(tresC)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(tresA)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(tresB)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(tresC))) ){
+                return true;
+            } else {
+                return false;
+            }
             case 4:
-                if (selectedCards.contains(cuatroA)||selectedCards.contains(cuatroB)||selectedCards.contains(cuatroC)||
-                        selectedCards.contains(cuatroD)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatroA)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatroB)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatroC)))||
+                        selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatroD)))) {
+                return true;
+            } else {
+                return false;
+            }
             case 5:
-                if (selectedCards.contains(cincoA)||selectedCards.contains(cincoB)||selectedCards.contains(cincoC)||
-                        selectedCards.contains(cincoD)||selectedCards.contains(cincoE)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cincoA)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(cincoB)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(cincoC)))||
+                        selectedCards.containsAll(new ArrayList<>(Arrays.asList(cincoD)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(cincoE)))) {
+                return true;
+            } else {
+                return false;
+            }
             default:
                 Log.d("ERROR", "Tabero no definido");
                 return false;
@@ -227,25 +229,25 @@ public class WinnerVerifier {
         Integer[] cincoE = new Integer[]{4,9,14,19,24};
         switch (tamTablero) {
             case 3:
-                if (selectedCards.contains(tresA)||selectedCards.contains(tresB)||selectedCards.contains(tresC)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(tresA)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(tresB)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(tresC))) ){
+                return true;
+            } else {
+                return false;
+            }
             case 4:
-                if (selectedCards.contains(cuatroA)||selectedCards.contains(cuatroB)||selectedCards.contains(cuatroC)||
-                        selectedCards.contains(cuatroD)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatroA)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatroB)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatroC)))||
+                        selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatroD)))) {
+                return true;
+            } else {
+                return false;
+            }
             case 5:
-                if (selectedCards.contains(cincoA)||selectedCards.contains(cincoB)||selectedCards.contains(cincoC)||
-                        selectedCards.contains(cincoD)||selectedCards.contains(cincoE)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cincoA)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(cincoB)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(cincoC)))||
+                        selectedCards.containsAll(new ArrayList<>(Arrays.asList(cincoD)))||selectedCards.containsAll(new ArrayList<>(Arrays.asList(cincoE)))) {
+                return true;
+            } else {
+                return false;
+            }
             default:
                 Log.d("ERROR", "Tabero no definido");
                 return false;
@@ -266,27 +268,43 @@ public class WinnerVerifier {
         Integer[] cinco = new Integer[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
         switch (tamTablero) {
             case 3:
-                if (selectedCards.contains(tres)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(tres)))) {
+                return true;
+            } else {
+                return false;
+            }
             case 4:
-                if (selectedCards.contains(cuatro)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cuatro)))) {
+                return true;
+            } else {
+                return false;
+            }
             case 5:
-                if (selectedCards.contains(cinco)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                if (selectedCards.containsAll(new ArrayList<>(Arrays.asList(cinco)))) {
+                return true;
+            } else {
+                return false;
+            }
             default:
                 Log.d("ERROR", "Tabero no definido");
                 return false;
 
         }
+    }
+
+    public boolean win(ArrayList<Integer> selectedCards,int size,int winOption){
+        switch (winOption){
+            case 0: return isDiagonalDerecha(selectedCards,size);
+            case 1: return isDiagonalIzquierda(selectedCards, size);
+            case 2: return isEquis(selectedCards, size);
+            case 3: return isEsquinas(selectedCards, size);
+            case 4: return isLineaHorizontal(selectedCards, size);
+            case 5: return isLineaVertical(selectedCards, size);
+            case 6: return isClasico(selectedCards, size);
+
+
+        }
+
+        return false;
     }
 }

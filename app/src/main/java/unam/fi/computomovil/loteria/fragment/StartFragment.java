@@ -30,6 +30,7 @@ public class StartFragment extends Fragment implements View.OnClickListener {
         View v = inflater.inflate(R.layout.fragment_start, container, false);
         v.findViewById(R.id.btn_start_griton).setOnClickListener(this);
         v.findViewById(R.id.btn_start_jugador).setOnClickListener(this);
+        v.findViewById(R.id.btn_start_fin).setOnClickListener(this);
         return v;
     }
 
@@ -38,6 +39,7 @@ public class StartFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()){
             case R.id.btn_start_griton: startFragmentCallback.onButtonClick(MainActivity.BE_GRITON);break;
             case R.id.btn_start_jugador: startFragmentCallback.onButtonClick(MainActivity.BE_JUGADOR);break;
+            case R.id.btn_start_fin: getActivity().finish();break;
         }
     }
 

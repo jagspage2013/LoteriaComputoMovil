@@ -63,5 +63,15 @@
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="menu_principal">Menú Principal</string>
+    <string name="nombres">Alumnos\n
+        \nEspinoza Gazano José Álejandro
+        \nGarcía Salinas José Ángel
+        \nHernandez Alarcón Alfredo
+        \nLopez Araiza Guevara Rodrigo
+        \nMiranda Del Prado Itzel
+        \nVargas Mariñelarena José Brandon
+    </string>
 
 </resources>

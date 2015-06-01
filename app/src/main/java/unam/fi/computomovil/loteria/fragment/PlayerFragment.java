@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import unam.fi.computomovil.loteria.R;
 import unam.fi.computomovil.loteria.interfaces.FragmentInteractionListener;
 import unam.fi.computomovil.loteria.util.GameConstantsManager;
+import unam.fi.computomovil.loteria.util.WinnerVerifier;
 import unam.fi.computomovil.loteria.view.widget.JossImageView;
 
 
@@ -32,12 +34,15 @@ public class PlayerFragment extends Fragment implements View.OnClickListener {
     public static final int X5 =25;
 
     private int gameSize;
+    private int winOption;
+    private WinnerVerifier winnerVerifier;
+
+    private ArrayList<Integer> selectedCards;
 
     private GameConstantsManager gameConstantsManager;
     private ArrayList<JossImageView> cards;
     private ArrayList<ImageView> frijoles;
 
-    private int gameCount;
     private FragmentInteractionListener listener;
     private Context context;
 
@@ -60,6 +65,8 @@ public class PlayerFragment extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         gameSize = getArguments().getInt(GAME_SIZE);
+        selectedCards = new ArrayList<>();
+        winnerVerifier = new WinnerVerifier();
     }
 
     @Override
@@ -77,7 +84,7 @@ public class PlayerFragment extends Fragment implements View.OnClickListener {
 
         for (int i = 0; i < gameSize; i++) {
             JossImageView josview = (JossImageView) v.findViewById(card_ids.getResourceId(i, 0));
-            josview.setId(i);
+            josview.setId_(i);
             cards.add(josview);
             frijoles.add((ImageView) v.findViewById(frijol_ids.getResourceId(i, 0)));
         }
@@ -87,12 +94,12 @@ public class PlayerFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        selectGameType();
         populateCards();
     }
 
     private void populateCards() {
         gameConstantsManager = new GameConstantsManager(GameConstantsManager.PLAYER, context,gameSize);
-        gameCount = 0;
         int x = 0;
         for (JossImageView i : cards) {
             Log.d(context.getPackageName(), "Se define el drawable " + x++);
@@ -107,38 +114,67 @@ public class PlayerFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view instanceof JossImageView) {
-            ImageView v = frijoles.get(((JossImageView) view).getId());
+            ImageView v = frijoles.get(((JossImageView) view).getId_());
             if (v.getVisibility() == View.GONE) {
                 v.setVisibility(View.VISIBLE);
-                gameCount++;
-
+                selectedCards.add(((JossImageView) view).getId_());
             } else {
                 v.setVisibility(View.GONE);
-                gameCount--;
+                selectedCards.remove(((JossImageView) view).getId_());
+
             }
-            if (gameCount == gameSize) {
-                promptWinDialog();
+            Log.d(getActivity().getPackageName(),"Lista Actual");
+
+            for(int i : selectedCards){
+                Log.d(getActivity().getPackageName(),"Integer on list "+i);
             }
+           checkIfWin();
         }
     }
 
-    private void promptWinDialog() {
+    private void checkIfWin() {
+        if(winnerVerifier.win(selectedCards,(int)Math.sqrt(gameSize),winOption)){
+            new AlertDialog.Builder(context)
+                    .setTitle("Loteria!!!!!!!")
+                    .setCancelable(false)
+                    .setPositiveButton("Terminar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                            listener.onFragmentInteraction(GameConstantsManager.PLAYER,TERMINAR);
+                        }
+                    })
+                    .setNegativeButton("Volver a Empezar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            populateCards();
+                        }
+                    })
+                    .show();
+        }
+
+    }
+
+    private void selectGameType(){
         new AlertDialog.Builder(context)
-                .setTitle("Loteria!!!!!!!")
+                .setTitle("Selecciona un Modo de Juego")
                 .setCancelable(false)
-                .setPositiveButton("Terminar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                        listener.onFragmentInteraction(GameConstantsManager.PLAYER,TERMINAR);
-                    }
-                })
-                .setNegativeButton("Volver a Empezar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        populateCards();
-                    }
-                })
-                .show();
+                .setAdapter(new ArrayAdapter<>(
+                                getActivity(),
+                                android.R.layout.simple_list_item_1,
+                                new String[]{"   Diagonal Derecha", "   Diagonal Izquierda", "   Equis",
+                                        "   Esquinas", "   Linea Horizontal", "   Linea Vertical","   Clásico"}),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                setType(i);
+                            }
+                        }).show();
+
+    }
+
+    private void setType(int i){
+        Log.d(getActivity().getPackageName(),"Win Type: "+i);
+        this.winOption = i;
     }
 }

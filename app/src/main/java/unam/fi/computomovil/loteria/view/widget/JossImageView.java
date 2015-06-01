@@ -11,16 +11,14 @@ import android.widget.ImageView;
  */
 public class JossImageView extends ImageView {
 
-    private  int id;
+    private  int id_;
 
-    @Override
-    public int getId() {
-        return id;
+    public int getId_() {
+        return id_;
     }
 
-    @Override
-    public void setId(int id) {
-        this.id = id;
+    public void setId_(int id_) {
+        this.id_ = id_;
     }
 
 

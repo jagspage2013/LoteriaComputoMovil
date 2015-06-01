@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements StartFragment.Sta
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         actionBar = getSupportActionBar();
+        actionBar.show();
         swithFragment(new StartFragment(), START);
 
 
