@@ -119,8 +119,9 @@ public class PlayerFragment extends Fragment implements View.OnClickListener {
                 v.setVisibility(View.VISIBLE);
                 selectedCards.add(((JossImageView) view).getId_());
             } else {
+                Log.d("ERROR",""+((JossImageView) view).getId_());
                 v.setVisibility(View.GONE);
-                selectedCards.remove(((JossImageView) view).getId_());
+                selectedCards.remove(selectedCards.size()-1);
 
             }
             Log.d(getActivity().getPackageName(),"Lista Actual");
@@ -148,6 +149,7 @@ public class PlayerFragment extends Fragment implements View.OnClickListener {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             populateCards();
+                            selectedCards.clear();
                         }
                     })
                     .show();
