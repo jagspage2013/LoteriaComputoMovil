@@ -22,6 +22,7 @@ public class GameConstantsManager {
     private Stack<Drawable> gritonCards;
     private Stack<Drawable> playerCards;
     private ArrayList<Integer> playernumber;
+    private ArrayList<Integer> gritonnumber;
 
     private Context context;
     private Random random;
@@ -54,9 +55,17 @@ public class GameConstantsManager {
 
     public void gritonInit(){
         gritonCards = new Stack<>();
-        for (int i = 0; i < drawableArray.length() ; i++) {
-            gritonCards.push(drawableArray.getDrawable(i));
-        }
+        gritonnumber = new ArrayList<>();
+        Random random2 = new Random();
+        int cardNum = -1;
+
+        do{
+            cardNum = random2.nextInt(54);
+            if(!gritonnumber.contains(cardNum)){
+                gritonCards.push(drawableArray.getDrawable(cardNum));
+                gritonnumber.add(cardNum);
+            }
+        }while(gritonCards.size()!=54);
     }
 
     public  void jugadorInit(int gameSize){
